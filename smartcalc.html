@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartCalc</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="navbar">
+        <h2 class="logo">SmartCalc</h2>
+        <ul>
+            <li onclick="switchTool('unit')" class="active-tab">Unit</li>
+            <li onclick="switchTool('bmi')">BMI</li>
+            <li onclick="switchTool('age')">Age</li>
+            <li onclick="switchTool('percent')">Percent</li>
+            <li onclick="switchTool('discount')">Discount</li>
+            <li onclick="switchTool('emi')">EMI</li>
+        </ul>
+    </div>
+
+    <div class="container">
+
+        <!-- Unit Converter -->
+        <div id="unit" class="tool-section active">
+            <h3>Unit Converter</h3>
+            <label>Category</label>
+            <select id="category">
+                <option value="length">Length</option>
+                <option value="weight">Weight</option>
+                <option value="volume">Volume</option>
+                <option value="temperature">Temperature</option>
+            </select>
+
+            <label>From</label>
+            <div class="unit-row">
+                <select id="fromUnit"></select>
+                <select id="toUnit"></select>
+            </div>
+
+            <input type="number" id="inputValue" placeholder="Enter value" />
+            <div id="result"></div>
+        </div>
+
+        <!-- BMI Calculator -->
+        <div id="bmi" class="tool-section">
+            <h3>BMI Calculator</h3>
+            <label>Height (cm)</label>
+            <input type="number" id="height" placeholder="Height in cm" />
+            <label>Weight (kg)</label>
+            <input type="number" id="weight" placeholder="Weight in kg" />
+            <button onclick="calcBMI()">Calculate BMI</button>
+            <div id="bmiResult"></div>
+        </div>
+
+        <!-- Age Calculator -->
+        <div id="age" class="tool-section">
+            <h3>Age Calculator</h3>
+            <label>Date of Birth</label>
+            <input type="date" id="dob" />
+            <button onclick="calcAge()">Calculate Age</button>
+            <div id="ageResult"></div>
+        </div>
+
+        <!-- Percentage Calculator -->
+        <div id="percent" class="tool-section">
+            <h3>Percentage Calculator</h3>
+            <label>Part Value</label>
+            <input type="number" id="part" />
+            <label>Total Value</label>
+            <input type="number" id="total" />
+            <button onclick="calcPercentage()">Calculate</button>
+            <div id="percentResult"></div>
+        </div>
+
+        <!-- Discount Calculator -->
+        <div id="discount" class="tool-section">
+            <h3>Discount Calculator</h3>
+            <label>Original Price</label>
+            <input type="number" id="originalPrice" />
+            <label>Discount %</label>
+            <input type="number" id="discountPercent" />
+            <button onclick="calcDiscount()">Calculate</button>
+            <div id="discountResult"></div>
+        </div>
+
+        <!-- EMI Calculator -->
+        <div id="emi" class="tool-section">
+            <h3>EMI Calculator</h3>
+            <label>Loan Amount</label>
+            <input type="number" id="loanAmount" />
+            <label>Annual Interest Rate (%)</label>
+            <input type="number" id="interestRate" />
+            <label>Loan Term (years)</label>
+            <input type="number" id="loanTerm" />
+            <button onclick="calcEMI()">Calculate EMI</button>
+            <div id="emiResult"></div>
+        </div>
+    </div>
+
+    <footer>Made by Kirtan Suthar</footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
